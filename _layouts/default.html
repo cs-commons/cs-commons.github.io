@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{page.title}}</title>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{site.url}}/js/cs-commons.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if ("{{page.artifact-name}}" !== "") {
+					cs_commons.init("{{site.url}}", "{{page.artifact-name}}");
+				}
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/site.css">
+	</head>
+	<body>
+		<div id="content">
+			<div id="header">{{page.title}}</div>
+			{{content}}
+		</div>
+	</body>
+</html>
+
+<!--
+vim:ts=2:
+-->
