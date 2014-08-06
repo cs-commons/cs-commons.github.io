@@ -7,7 +7,7 @@ title: "Welcome to CS Commons!"
 
 CS Commons is a mechanism for sharing, discovering, and reusing Computer Science course materials, such as assignments, labs, and lecture notes.
 
-If you've ever thought to yourself that it would be really cool if there was an easy way to use course materials written by other people, and to share materials you've developed, that's exactly what CS Commons is intended to be.
+If you've ever thought to yourself that it would be really cool if there were an easy way to use course materials written by other people, and to share materials you've developed, that's exactly what CS Commons is intended to be.
 
 # How does it work?
 
