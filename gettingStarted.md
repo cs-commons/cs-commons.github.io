@@ -31,6 +31,10 @@ Once the script is installed, you can get an overview of its commands by running
 
 First: create a public Git repository for your site.  We highly recommend using [GitHub](https://github.com): hosting your repository on GitHub will allow you to automatically publish your site using [GitHub Pages](https://pages.github.com/).
 
+<div class="callout">
+<b>Important!</b> If you create your public repository using GitHub, make sure that the description of your repository contains the text <code>(cs commons)</code>.  Note that the parentheses should be included.  For example, a good description might be something like <blockquote><code>CS 101, Fall 2014 at Unseen University (cs commons)</code></blockquote>  Adding the text <code>(cs commons)</code> to the description tags the repository as being part of CS Commons, and enables your repository to be found in searches for CS Commons content.
+</div>
+
 Make a note of the Git URL of the repository you created.
 
 In the example below, we'll assume that we've created a public Git repository called `cs101-fall2014` with the Git URL `git@github.com:pstibbons/cs101-fall2014`.
@@ -87,6 +91,50 @@ In your web browser, enter the URL `http://localhost:4000`.  You should see the 
 
 Type Control-C in the window where Jekyll is running to shut down Jekyll.
 
+# Site checkin
+
+The `cs-commons create-site` command only creates a local site that is not connected to a public Git repository.  To connect your local site to the public Git repository, run the following command from the local site directory:
+
+    cs-commons checkin
+
+The `cs-commons checkin` command will create a local Git repository, connect it to your public Git repository, and push the initial content of your local site to the public repository.  Example run (user input in **bold**):
+
+<pre>
+Finding files to check in...done
+Creating empty git repository...done
+Setting default branch to gh-pages...done
+Adding files...done
+Running git status to confirm files to be added:
+# On branch gh-pages
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   .gitignore
+#	new file:   _config.yml
+#	new file:   _layouts/default.html
+#	new file:   _layouts/fragment.html
+#	new file:   cs-commons-site.json
+#	new file:   css/site.css
+#	new file:   index.md
+#	new file:   js/cs-commons.js
+#
+If you want to make adjustments to the files to be added,
+I can run a shell for you.
+Would you like to start a shell? (yes/no) 
+=> <b>no</b>
+Committing files...done
+Setting origin...done
+Pushing to origin...done
+Checking repository description for (cs commons) tag...done
+</pre>
+
+At this point, if you are using GitHub, you should be able to do something very exciting: see your published site!  In your web browser, open the URL <code>http://<i>username</i>.github.io/<i>sitename</i></code>, where *username* is the GitHub user or organization which owns the public Git repository, and *sitename* is the repository name.  In the example above in the "Creating a site" section, the website URL would be `http://pstibbons.github.io/cs101-fall2014`.
+
+Note that it might take a few minutes before the site appears.
+
 # Adding content
 
 A CS Commons site is just a Jekyll website.  Jekyll uses [Markdown](http://daringfireball.net/projects/markdown/) as its markup language.  For example, your site will have a file `index.md` that is the Markdown source from which your site's start page is generated.  Try editing this file, then preview it using the `cs-commons preview` command.
@@ -97,6 +145,11 @@ A good way to get a sense of how you can customize your own site is to look at t
 
     cd $HOME/git
     git clone https://github.com/cs-commons/example-site
+
+# Publishing updated content
+
+As you change the content of your site, use `git` to commit and push changes to your public Git repository.  If you are using GitHub, then your changes will automatically be published to your repository's GitHub Pages site.
+
 
 <!-- vim:set wrap: ­-->
 <!-- vim:set linebreak: -->
