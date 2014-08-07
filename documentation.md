@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Getting Started"
+title: "Documentation"
 ---
 
 # First things first
