@@ -57,3 +57,12 @@ h2 {
 h3 {
 	font-size: 120%;
 }
+
+pre {
+	margin-left: 40px;
+	margin-right: 40px;
+	padding: 6px;
+	background: #eee;
+	border: 2px solid silver;
+	overflow: auto;
+}
