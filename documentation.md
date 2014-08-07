@@ -141,7 +141,7 @@ A CS Commons site is just a Jekyll website.  Jekyll uses [Markdown](http://darin
 
 You can (and should!) add other pages to your site.  You can add graphics.  You can modify the site's CSS styles to customize its appearance.
 
-A good way to get a sense of how you can customize your own site is to look at the [Example Site](http://cs-commons.github.io/example-site).  It is hosted in a public GitHub repository: `https://github.com/cs-commons/example-site`.  You can use git clone to make a local copy:
+A good way to get a sense of how you can customize your own site is to look at the [Example Site](http://cs-commons.github.io/example-site).  It is hosted in a public GitHub repository: <https://github.com/cs-commons/example-site>.  You can use git clone to make a local copy:
 
     cd $HOME/git
     git clone https://github.com/cs-commons/example-site
