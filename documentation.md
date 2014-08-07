@@ -5,7 +5,7 @@ title: "Documentation"
 
 # First things first
 
-Make sure you have the [Prerequisites](prereqs.html) installed.
+Make sure the [prerequisites](prereqs.html) are in place.
 
 These instructions assume you will be running the various CS Commons tools from a Unix shell (such as Terminal in Mac OS, Cygwin Terminal in Windows, etc.)
 
@@ -13,7 +13,7 @@ These instructions also assume some familiarity with [Git](http://git-scm.com). 
 
 # Installing the cs-commons script
 
-CS Commons provides a Ruby script, called `cs-commons`, which automates the creation and maintenance of CS Commons sites and artifacts.
+CS Commons provides a Ruby script, called `cs-commons`, which automates the creation and maintenance of CS Commons artifacts and sites.
 
 To install this script, run the following commands:
 
@@ -150,6 +150,23 @@ A good way to get a sense of how you can customize your own site is to look at t
 
 As you change the content of your site, use `git` to commit and push changes to your public Git repository.  If you are using GitHub, then your changes will automatically be published to your repository's GitHub Pages site.
 
+The general procedure is
+
+<pre>
+git add <i>paths</i>
+git commit
+git push
+</pre>
+
+*paths* is a list of files and/or directories which have been updated.
+
+When you run `git commit`, you will be prompted for a commit message.  You can configure which editor to use to edit commit messages as follows:
+
+<pre>git config --global core.editor "<i>editor</i>"</pre>
+
+For example, to use `nano`:
+
+<pre>git config --global core.editor "nano"</pre>
 
 <!-- vim:set wrap: ­-->
 <!-- vim:set linebreak: -->

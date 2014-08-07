@@ -11,7 +11,7 @@ If you've ever thought to yourself that it would be really cool if there were an
 
 # How does it work?
 
-CS Commons consists of *sites* and *artifacts*.
+CS Commons consists of *artifacts* and *sites*.
 
 A CS Commons artifact is a self-contained chunk of content such as an assignment, lab, or set of lecture notes.  Each artifact is explicitly designed to be reusable.
 
