@@ -11,6 +11,8 @@ These instructions assume you will be running the various CS Commons tools from 
 
 These instructions also assume some familiarity with [Git](http://git-scm.com).  The [Git Documentation](http://git-scm.com/documentation) page is a good place to start.  In addition, there are lots of other good online books and tutorials for learning about Git.
 
+Finally: this page describes how to create and use CS Commons content.  The [Specfications](specifications.html) page describes the technical requirements for creating a CS Commons site or artifact.
+
 # Installing the cs-commons script
 
 CS Commons provides a Ruby script, called `cs-commons`, which automates the creation and maintenance of CS Commons artifacts and sites.
