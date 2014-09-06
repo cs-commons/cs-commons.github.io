@@ -170,6 +170,10 @@ For example, to use `nano`:
 
 <pre>git config --global core.editor "nano"</pre>
 
+# Creating an artifact
+
+TODO: documentation on creating an artifact
+
 <!-- vim:set wrap: ­-->
 <!-- vim:set linebreak: -->
 <!-- vim:set nolist: -->
