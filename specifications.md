@@ -30,7 +30,7 @@ A CS Commons site must have, in its root directory, a file called `cs-commons-si
 > repo\_pub\_url | no | string | URL of webpage for the site's Git repository
 > title | yes | string | The title of the site
 
-A CS Commons site can include any number of CS Commons artifacts as submodules.  A site must reference artifacts using a public Git URL.  (In other words, it must be possible to gain read access to the artifact URL without providing any credentials.)
+A CS Commons site can include any number of CS Commons artifacts as Git submodules.  A site must reference each artifact repository using a public Git URL.  (In other words, it must be possible to gain read access to an artifact repository without providing any credentials.)
 
 A CS Commons site must use JavaScript/ECMAScript to transform HTML elements with the `csc-subst` and `csc-fragment` CSS clases as described in the Artifacts section.  (The [CS Commons template site](https://github.com/cs-commons/template-site) includes code that does this.)
 
@@ -130,3 +130,9 @@ For fragment elements, a document is loaded from the URL (relative to the root o
 <pre>subst/<i>artifact-name</i>/<i>identifier</i>.html</pre>
 
 where *artifact-name* is the artifact name and *identifier* is the fragment element's identifier.  The body of the fragment element is replaced with the HTML elements found in the loaded document.
+
+## Discussion
+
+Authors of artifacts should try to choose artifact names that are unlikely to conflict with the names of other artifacts.
+
+It is the responsibility of the site (and specifically, the site's `default` layout template) to transform substitution and fragment elements.
