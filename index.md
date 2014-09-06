@@ -27,7 +27,7 @@ CS Commons sites are developed using [Jekyll](http://jekyllrb.com/).  Jekyll use
 
 # I'm sold!  Help me get started.
 
-See the [Documentation](documenation.html) page!
+See the [Documentation](documentation.html) page!
 
 <!-- vim:set wrap: ­-->
 <!-- vim:set linebreak: -->

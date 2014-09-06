@@ -138,3 +138,7 @@ where *artifact-name* is the artifact name and *identifier* is the fragment elem
 Authors of artifacts should try to choose artifact names that are unlikely to conflict with the names of other artifacts.
 
 It is the responsibility of the site (and specifically, the site's `default` layout template) to transform substitution and fragment elements.
+
+<!-- vim:set wrap: ­-->
+<!-- vim:set linebreak: -->
+<!-- vim:set nolist: -->
