@@ -7,6 +7,8 @@ title: "Specifications"
 
 This page has specifications for CS Commons sites and repositories.
 
+This information is intended for people building tools to work with CS Commons content.  If you are interesting it creating or using CS Commons content, the [Documentation](documentation.html) page will probably be more useful.
+
 The sections titled "Discussion" are not part of the specifications, but are intended to clarify the intent of the specifications.
 
 # File types
