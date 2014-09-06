@@ -11,7 +11,7 @@ The sections titled "Discussion" are not part of the specifications, but are int
 
 # File types
 
-In CS Commons sites and artifacts, files with a `.md` file extension are Markdown files, and files with an `.html` file extension are HTML.  We recommend the use of [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown).
+In CS Commons sites and artifacts, files with a `.md` file extension are Markdown files.  We recommend the use of [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown).  Because CS Commons sites and artifacts use [Jekyll](http://jekyllrb.com/), all Markdown files must contain YAML front matter.  All Markdown files that are intended to render as web pages must use the `default` layout.
 
 JSON objects are defined by RFC 4627, [The application/json Media Type for JavaScript Object Notation (JSON)](http://www.ietf.org/rfc/rfc4627.txt).
 
@@ -42,8 +42,8 @@ A CS Commons site must be public, but does not need to be published using a perm
 
 A CS Commons artifact is a Git repository containing (at a minimum) three files:
 
-* `index.md` or `index.html`
-* `README.md` or `README.html`
+* `index.md`
+* `README.md`
 * `cs-commons-artifact.json`
 
 All of the above files must be located in the root directory of the artifact.
@@ -58,9 +58,9 @@ A CS Commons artifact is a partial Jekyll site.
 
 ## Required files
 
-The `index.md` (or `index.html`) file is the home page.  All of the artifact's content must be reachable from this file.
+The `index.md` file is the home page.  All of the artifact's content must be reachable from this file.
 
-The `README.md` (or `README.html`) file must contain the following information:
+The `README.md` file must contain the following information:
 
 * The author or authors of the artifact
 * The license under which the artifact is distributed
@@ -97,4 +97,36 @@ The structure of a license object is as follows:
 
 ## Substitutions and fragments
 
-TODO: document this
+The YAML front matter of all Markdown files in an artifact must specify a key called `artifact-name`.  The value of this key is the *artifact name*.  The artifact name must consist only of alphabetic characters.  For example, the YAML front matter of the `index.md` file in an artifact whose artifact name is "breakout" might be defined this way:
+
+    ---
+    layout: default
+    title: "Breakout"
+    artifact-name: breakout
+    ---
+
+Markdown files in an artifact may contain *substitution* and *fragment* elements.  The content of these elements is not specified by the artifact, but instead is specified by the site when it imports the artifact.
+
+A *substitution* element has the following form:
+
+<pre>&lt;span class="csc-subst" id="<i>identifier</i>"&gt;&lt;/span&gt;</pre>
+
+A *fragment* element has the following form:
+
+<pre>&lt;div class="csc-fragment" id="<i>identifier</i>"&gt;&lt;/div&gt;</pre>
+
+The *identifier* is a unique element id.  It must be a single word consisting of only alphabetic characters.
+
+When a web page generated from an artifact Markdown file, all substitution and fragment elements must be transformed as follows.
+
+For substitution elements, a JSON object must be loaded from the URL (relative to the root of the site)
+
+<pre>subst/<i>artifact-name</i>.json</pre>
+
+where *artifact-name* is the artifact name.  This JSON object has keys corresponding to the identifiers of the substitution elements.  Each substitution element's text is replaced by the value found in the JSON object (by using the element's identifier as a key).
+
+For fragment elements, a document is loaded from the URL (relative to the root of the site)
+
+<pre>subst/<i>artifact-name</i>/<i>identifier</i>.html</pre>
+
+where *artifact-name* is the artifact name and *identifier* is the fragment element's identifier.  The body of the fragment element is replaced with the HTML elements found in the loaded document.
